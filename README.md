@@ -1,6 +1,6 @@
 # event-drive
 
-Support for creating event emitter with reactive callback
+Support for creating event emitter with reactive callback.  
 Callback function is not required.
 
 ## Install
