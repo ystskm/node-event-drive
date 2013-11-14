@@ -7,13 +7,14 @@
     "email": "sakamoto@liberty-technology.biz"
   },
   "contributors": [],
-  "dependencies": {
-  },
   "description": "Create event emitter with reactive callback",
   "dependencies": {
     "micro-pipe":"*"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodeunit": "*",
+    "nodeunit-ci": "*"
+  },
   "keywords": ["util","event","callback"],
   "main": "index.js",
   "repository": {
