@@ -13,9 +13,11 @@ Install with [npm](http://npmjs.org/):
 
 ## API - Queries
 
-    // first argument should be a *function* or an *Array* of function(s)
-    // first function of exec is called asynchronously
+first argument should be a `function` or an `Array` of function(s)
+first function of exec is called asynchronously
     var emitter = require('event-drive')(exec[, callback]);
     
-    // event drive now.
-    emitter.on( .. 
+Then, you can event drive now.
+    emitter.on( .. )
+
+See more example *test/basic.js*
