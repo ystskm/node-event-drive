@@ -1,11 +1,14 @@
 /***/
 // [node-event-drive] index.js
 var Emitter = require('events').EventEmitter, micropipe = require('micro-pipe');
+var processor = typeof setImmediate == 'function' ? setImmediate: function(fn) {
+  process.nextTick(fn);
+};
 module.exports = eventDrive;
 
 function eventDrive(emitter, line, callback) {
 
-  if(typeof emitter == 'function' || Array.isArray(emitter))
+  if(emitter == null || typeof emitter == 'function' || Array.isArray(emitter))
     callback = line, line = emitter, emitter = null;
 
   var ee = emitter || new Emitter();
@@ -15,7 +18,9 @@ function eventDrive(emitter, line, callback) {
       callback.apply(null, [null].concat(args));
     });
 
-  setImmediate(function() {
+  line == null ? ee.once('trigger', function(line) {
+    micropipe(line);
+  }): processor(function() {
     micropipe(line);
   });
 

@@ -20,4 +20,4 @@ first function of exec is called asynchronously
 Then, you can event drive now.
     emitter.on( .. )
 
-See more example *test/basic.js*
+See more example *test/basic.js* and *test/trigger.js*
