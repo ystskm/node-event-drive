@@ -18,12 +18,13 @@ function eventDrive(emitter, line, callback) {
       callback.apply(null, [null].concat(args));
     });
 
-  line == null ? ee.once('trigger', function(line) {
-    micropipe(line);
-  }): processor(function() {
-    micropipe(line);
-  });
-
+  line == null ? ee.once('trigger', asyncTrigger): asyncTrigger(line);
   return ee;
+
+  function asyncTrigger(line) {
+    processor(function() {
+      micropipe(line);
+    });
+  };
 
 }
