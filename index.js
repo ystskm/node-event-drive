@@ -8,7 +8,7 @@ module.exports = eventDrive;
 
 function eventDrive(emitter, line, callback) {
 
-  if(emitter == null || typeof emitter == 'function' || Array.isArray(emitter))
+  if(!(emitter instanceof Emitter) && typeof callback == 'undefined')
     callback = line, line = emitter, emitter = null;
 
   var ee = emitter || new Emitter();
