@@ -21,6 +21,7 @@
     "url": "http://github.com/ystskm/node-event-drive",
     "type": "git"
   },
+  "license": "MIT",
   "engine": {
     "node": ">=0.10.0"
   },
